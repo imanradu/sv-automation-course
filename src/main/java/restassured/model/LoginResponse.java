@@ -3,6 +3,9 @@ package restassured.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown=true)
 public class LoginResponse {
     @SerializedName("token")
     private String token;

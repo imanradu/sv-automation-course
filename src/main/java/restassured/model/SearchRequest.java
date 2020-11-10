@@ -1,24 +1,36 @@
 package restassured.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class SearchRequest {
+    @JsonProperty("query")
     private String query;
-    private int merchant_id;
-    private String category_id;
-    private String category_slug;
-    private int min_commission;
-    private int max_commission;
-    private int min_price;
-    private int max_price;
+    @JsonProperty("merchant_id")
+    private Integer merchantId;
+    @JsonProperty("category_id")
+    private String categoryId;
+    @JsonProperty("category_slug")
+    private String categorySlug;
+    @JsonProperty("min_commission")
+    private Integer minCommission;
+    @JsonProperty("max_commission")
+    private Integer maxCommission;
+    @JsonProperty("min_price")
+    private Integer minPrice;
+    @JsonProperty("max_price")
+    private Integer maxPrice;
 
     private SearchRequest(SearchRequestBuilder searchRequestBuilder) {
         this.query = searchRequestBuilder.query;
-        this.merchant_id = searchRequestBuilder.merchant_id;
-        this.category_id = searchRequestBuilder.category_id;
-        this.category_slug = searchRequestBuilder.category_slug;
-        this.min_commission = searchRequestBuilder.min_commission;
-        this.max_commission = searchRequestBuilder.max_commission;
-        this.min_price = searchRequestBuilder.min_price;
-        this.max_price = searchRequestBuilder.max_price;
+        this.merchantId = searchRequestBuilder.merchantId;
+        this.categoryId = searchRequestBuilder.categoryId;
+        this.categorySlug = searchRequestBuilder.categorySlug;
+        this.minCommission = searchRequestBuilder.minCommission;
+        this.maxCommission = searchRequestBuilder.maxCommission;
+        this.minPrice = searchRequestBuilder.minPrice;
+        this.maxPrice = searchRequestBuilder.maxPrice;
     }
 
     public String getQuery() {
@@ -29,109 +41,109 @@ public class SearchRequest {
         this.query = query;
     }
 
-    public int getMerchant_id() {
-        return merchant_id;
+    public Integer getMerchantId() {
+        return merchantId;
     }
 
-    public void setMerchant_id(int merchant_id) {
-        this.merchant_id = merchant_id;
+    public void setMerchantId(int merchantId) {
+        this.merchantId = merchantId;
     }
 
-    public String getCategory_id() {
-        return category_id;
+    public String getCategoryId() {
+        return categoryId;
     }
 
-    public void setCategory_id(String category_id) {
-        this.category_id = category_id;
+    public void setCategoryId(String categoryId) {
+        this.categoryId = categoryId;
     }
 
-    public String getCategory_slug() {
-        return category_slug;
+    public String getCategorySlug() {
+        return categorySlug;
     }
 
-    public void setCategory_slug(String category_slug) {
-        this.category_slug = category_slug;
+    public void setCategorySlug(String categorySlug) {
+        this.categorySlug = categorySlug;
     }
 
-    public int getMin_commission() {
-        return min_commission;
+    public Integer getMinCommission() {
+        return minCommission;
     }
 
-    public void setMin_commission(int min_commission) {
-        this.min_commission = min_commission;
+    public void setMinCommission(int minCommission) {
+        this.minCommission = minCommission;
     }
 
-    public int getMax_commission() {
-        return max_commission;
+    public Integer getMaxCommission() {
+        return maxCommission;
     }
 
-    public void setMax_commission(int max_commission) {
-        this.max_commission = max_commission;
+    public void setMaxCommission(int maxCommission) {
+        this.maxCommission = maxCommission;
     }
 
-    public int getMin_price() {
-        return min_price;
+    public Integer getMinPrice() {
+        return minPrice;
     }
 
-    public void setMin_price(int min_price) {
-        this.min_price = min_price;
+    public void setMinPrice(int minPrice) {
+        this.minPrice = minPrice;
     }
 
-    public int getMax_price() {
-        return max_price;
+    public Integer getMaxPrice() {
+        return maxPrice;
     }
 
-    public void setMax_price(int max_price) {
-        this.max_price = max_price;
+    public void setMaxPrice(int maxPrice) {
+        this.maxPrice = maxPrice;
     }
 
     public static class SearchRequestBuilder {
         private String query;
-        private int merchant_id;
-        private String category_id;
-        private String category_slug;
-        private int min_commission;
-        private int max_commission;
-        private int min_price;
-        private int max_price;
+        private Integer merchantId;
+        private String categoryId;
+        private String categorySlug;
+        private Integer minCommission;
+        private Integer maxCommission;
+        private Integer minPrice;
+        private Integer maxPrice;
 
         public SearchRequestBuilder withQuery( final String query) {
             this.query = query;
             return this;
         }
 
-        public SearchRequestBuilder withMerchantId(final int merchant_id) {
-            this.merchant_id = merchant_id;
+        public SearchRequestBuilder withMerchantId(final int merchantId) {
+            this.merchantId = merchantId;
             return this;
         }
 
-        public SearchRequestBuilder withCategoryId(final String category_id) {
-            this.category_id = category_id;
+        public SearchRequestBuilder withCategoryId(final String categoryId) {
+            this.categoryId = categoryId;
             return this;
         }
 
-        public SearchRequestBuilder withCategorySlug(final String category_slug) {
-            this.category_slug = category_slug;
+        public SearchRequestBuilder withCategorySlug(final String categorySlug) {
+            this.categorySlug = categorySlug;
             return this;
         }
 
-        public SearchRequestBuilder withMinCommission(final int min_commission) {
-            this.min_commission = min_commission;
+        public SearchRequestBuilder withMinCommission(final int minCommission) {
+            this.minCommission = minCommission;
             return this;
         }
 
-        public SearchRequestBuilder withMaxCommission(final int max_commission) {
-            this.max_commission = max_commission;
+        public SearchRequestBuilder withMaxCommission(final int maxCommission) {
+            this.maxCommission = maxCommission;
             return this;
         }
 
-        public SearchRequestBuilder withMinPrice(final int min_price) {
-            this.min_price = min_price;
+        public SearchRequestBuilder withMinPrice(final int minPrice) {
+            this.minPrice = minPrice;
             return this;
         }
 
-        public SearchRequestBuilder withMaxPrice(final int max_price) {
-            this.max_price = max_price;
+        public SearchRequestBuilder withMaxPrice(final int maxPrice) {
+            this.maxPrice = maxPrice;
             return this;
         }
 

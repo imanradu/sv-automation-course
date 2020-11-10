@@ -29,7 +29,7 @@ public class GetProperty {
     }
 
     public static Properties getPropertyFileContent(String propertiesFileName) {
-        return new restAssured.framework.common.ReadPropertyFile().getPropertiesValue(propertiesFileName);
+        return new ReadPropertyFile().getPropertiesValue(propertiesFileName);
     }
 
     public static String fromConfigProp(String prop) {

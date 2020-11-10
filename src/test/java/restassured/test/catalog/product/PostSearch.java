@@ -1,6 +1,7 @@
 package restassured.test.catalog.product;
 
-
+import org.apache.http.HttpStatus;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -34,7 +35,6 @@ public class PostSearch extends TestBase {
                 .header("exclude_public", excludePublic)
                 .body(searchRequest)
                 .post(GetProperty.fromConfigProp("SEARCH"));
-        System.out.println(response);
+        Assert.assertEquals(response.getStatusCode(), HttpStatus.SC_OK);
     }
-
 }
