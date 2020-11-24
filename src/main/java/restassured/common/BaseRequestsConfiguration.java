@@ -3,7 +3,6 @@ package restassured.common;
 import org.apache.http.HttpHeaders;
 
 import io.restassured.RestAssured;
-import io.restassured.config.HeaderConfig;
 import io.restassured.specification.RequestSpecification;
 import restassured.util.GetProperty;
 
