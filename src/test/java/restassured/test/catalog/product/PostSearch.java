@@ -7,13 +7,14 @@ import org.testng.annotations.Test;
 
 import io.restassured.response.Response;
 import restassured.common.TestBase;
+import restassured.common.TestGroup;
 import restassured.model.SearchRequest;
 import restassured.util.GetProperty;
 
 import static io.restassured.RestAssured.given;
-import static restassured.common.TestGroup.SANITY_TESTS;
 
 public class PostSearch extends TestBase {
+
     private String page = "1";
     private String size = "20";
     private String excludePublic = "true";
@@ -23,8 +24,8 @@ public class PostSearch extends TestBase {
         setupTest();
     }
 
-    @Test(groups = SANITY_TESTS)
-    public void validationGetProducts() {
+    @Test(groups = TestGroup.SANITY_TESTS)
+    public void validationSearchProducts() {
         SearchRequest searchRequest = new SearchRequest.SearchRequestBuilder()
                 .withMerchantId(0)
                 .build();
